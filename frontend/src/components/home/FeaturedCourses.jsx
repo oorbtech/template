@@ -57,7 +57,7 @@ const FeaturedCourses = () => {
           {courses.map((course) => (
             <div
               key={course.courseCode}
-              className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+              className="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
             >
               {/* Course Image */}
               <div className="relative h-48 bg-gradient-to-r from-primary-500 to-primary-600">
@@ -91,8 +91,8 @@ const FeaturedCourses = () => {
                 </p>
 
                 {/* Course Meta */}
-                <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
-                  <div className="flex items-center space-x-4">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between text-sm text-gray-500 mb-4 gap-2">
+                  <div className="flex items-center space-x-3 sm:space-x-4">
                     <div className="flex items-center">
                       <Clock className="w-4 h-4 mr-1" />
                       <span>{course.duration || '8 weeks'}</span>
@@ -109,18 +109,18 @@ const FeaturedCourses = () => {
                 </div>
 
                 {/* Price and CTA */}
-                <div className="flex items-center justify-between">
-                  <div className="text-2xl font-bold text-blue-600">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                  <div className="text-xl sm:text-2xl font-bold text-blue-600">
                     {course.fees?.currency || 'Rs.'} {course.fees?.discounted || course.fees?.original || 'Free'}
                     {course.fees?.original && course.fees?.discounted && course.fees.original !== course.fees.discounted && (
-                      <span className="text-sm text-gray-500 line-through ml-2">
+                      <span className="text-sm text-gray-500 line-through ml-2 block sm:inline">
                         {course.fees.currency} {course.fees.original}
                       </span>
                     )}
                   </div>
                   <Link
                     to={`/courses/${course.courseCode}`}
-                    className="btn-primary text-sm"
+                    className="btn-primary text-sm w-full sm:w-auto text-center"
                   >
                     View Details
                   </Link>
@@ -134,7 +134,7 @@ const FeaturedCourses = () => {
         <div className="text-center">
           <Link
             to="/courses"
-            className="inline-flex items-center px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-300"
+            className="inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-300 text-sm sm:text-base"
           >
             View All Courses
             <ArrowRight className="ml-2 w-5 h-5" />

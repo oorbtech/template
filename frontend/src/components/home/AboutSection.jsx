@@ -41,29 +41,29 @@ const AboutSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
           {/* Content */}
           <div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 lg:mb-6">
               Empowering Students Since 2010
             </h3>
-            <p className="text-gray-600 mb-6">
+            <p className="text-gray-600 mb-4 lg:mb-6 text-sm sm:text-base">
               BMS Academy was founded with a simple yet powerful vision: to bridge the gap between 
               academic learning and industry requirements. We believe in the power of offline, 
               face-to-face education that fosters real connections and deep understanding.
             </p>
-            <p className="text-gray-600 mb-8">
+            <p className="text-gray-600 mb-6 lg:mb-8 text-sm sm:text-base">
               Our state-of-the-art facilities, experienced faculty, and industry-aligned curriculum 
               ensure that our students are not just job-ready, but career-ready. We've successfully 
               placed thousands of students in leading companies across various industries.
             </p>
             
             {/* Stats */}
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-2 gap-4 sm:gap-6">
               <div className="text-center p-4 bg-white rounded-lg shadow-sm">
-                <div className="text-3xl font-bold text-blue-600">10+</div>
-                <div className="text-sm text-gray-600">Years Experience</div>
+                <div className="text-2xl sm:text-3xl font-bold text-blue-600">10+</div>
+                <div className="text-xs sm:text-sm text-gray-600">Years Experience</div>
               </div>
               <div className="text-center p-4 bg-white rounded-lg shadow-sm">
-                <div className="text-3xl font-bold text-blue-600">95%</div>
-                <div className="text-sm text-gray-600">Placement Rate</div>
+                <div className="text-2xl sm:text-3xl font-bold text-blue-600">95%</div>
+                <div className="text-xs sm:text-sm text-gray-600">Placement Rate</div>
               </div>
             </div>
           </div>
@@ -73,28 +73,28 @@ const AboutSection = () => {
             <img
               src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=800"
               alt="BMS Academy classroom"
-              className="rounded-2xl shadow-xl"
+              className="rounded-xl lg:rounded-2xl shadow-xl w-full"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-xl lg:rounded-2xl"></div>
           </div>
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
               <div
                 key={index}
-                className="text-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300"
+                className="text-center p-4 sm:p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300"
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-100 text-blue-600 rounded-full mb-4">
-                  <Icon className="w-8 h-8" />
+                <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-primary-100 text-blue-600 rounded-full mb-3 sm:mb-4">
+                  <Icon className="w-6 h-6 sm:w-8 sm:h-8" />
                 </div>
-                <h4 className="text-xl font-semibold text-gray-900 mb-3">
+                <h4 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 sm:mb-3">
                   {feature.title}
                 </h4>
-                <p className="text-gray-600">
+                <p className="text-gray-600 text-sm sm:text-base">
                   {feature.description}
                 </p>
               </div>
@@ -104,8 +104,8 @@ const AboutSection = () => {
 
         {/* Team Highlight */}
         <div className="mt-20 text-center">
-          <h3 className="text-2xl font-bold text-gray-900 mb-8">Meet Our Leadership Team</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-6 lg:mb-8">Meet Our Leadership Team</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8">
             {[
               {
                 name: 'Dr. Sarah Johnson',
@@ -127,10 +127,10 @@ const AboutSection = () => {
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
+                  className="w-24 h-24 sm:w-32 sm:h-32 rounded-full mx-auto mb-3 sm:mb-4 object-cover"
                 />
-                <h4 className="text-lg font-semibold text-gray-900">{member.name}</h4>
-                <p className="text-gray-600">{member.role}</p>
+                <h4 className="text-base sm:text-lg font-semibold text-gray-900">{member.name}</h4>
+                <p className="text-sm sm:text-base text-gray-600">{member.role}</p>
               </div>
             ))}
           </div>

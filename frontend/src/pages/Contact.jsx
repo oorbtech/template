@@ -103,25 +103,25 @@ const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Contact Information */}
           <div className="lg:col-span-1">
-            <div className="bg-white rounded-lg shadow-sm p-8">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Get in Touch</h2>
-              <p className="text-gray-600 mb-8">
+            <div className="bg-white rounded-lg shadow-sm p-6 lg:p-8">
+              <h2 className="text-xl lg:text-2xl font-bold text-gray-900 mb-4 lg:mb-6">Get in Touch</h2>
+              <p className="text-gray-600 mb-6 lg:mb-8 text-sm lg:text-base">
                 We're here to help you with any questions about our courses, admissions, 
                 or general inquiries. Reach out to us through any of the following channels.
               </p>
 
-              <div className="space-y-6">
+              <div className="space-y-4 lg:space-y-6">
                 {contactInfo.map((info, index) => {
                   const Icon = info.icon;
                   return (
                     <div key={index} className="flex items-start">
-                      <div className="p-3 bg-primary-100 rounded-lg mr-4">
-                        <Icon className="w-6 h-6 text-blue-600" />
+                      <div className="p-2 lg:p-3 bg-primary-100 rounded-lg mr-3 lg:mr-4 flex-shrink-0">
+                        <Icon className="w-5 h-5 lg:w-6 lg:h-6 text-blue-600" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-gray-900 mb-2">{info.title}</h3>
+                        <h3 className="font-semibold text-gray-900 mb-1 lg:mb-2 text-sm lg:text-base">{info.title}</h3>
                         {info.details.map((detail, detailIndex) => (
-                          <p key={detailIndex} className="text-gray-600 text-sm">
+                          <p key={detailIndex} className="text-gray-600 text-xs lg:text-sm">
                             {detail}
                           </p>
                         ))}
@@ -132,8 +132,8 @@ const Contact = () => {
               </div>
 
               {/* Social Links */}
-              <div className="mt-8 pt-8 border-t border-gray-200">
-                <h3 className="font-semibold text-gray-900 mb-4">Follow Us</h3>
+              <div className="mt-6 lg:mt-8 pt-6 lg:pt-8 border-t border-gray-200">
+                <h3 className="font-semibold text-gray-900 mb-3 lg:mb-4 text-sm lg:text-base">Follow Us</h3>
                 <div className="flex space-x-4">
                   {socialLinks.map((social) => {
                     const Icon = social.icon;
@@ -152,15 +152,15 @@ const Contact = () => {
               </div>
 
               {/* Live Chat */}
-              <div className="mt-8 p-4 bg-gradient-to-r from-primary-600 to-primary-700 rounded-lg text-white">
+              <div className="mt-6 lg:mt-8 p-4 bg-gradient-to-r from-primary-600 to-primary-700 rounded-lg text-white">
                 <div className="flex items-center mb-2">
                   <MessageCircle className="w-5 h-5 mr-2" />
-                  <h3 className="font-semibold">Need Immediate Help?</h3>
+                  <h3 className="font-semibold text-sm lg:text-base">Need Immediate Help?</h3>
                 </div>
-                <p className="text-blue-100 text-sm mb-3">
+                <p className="text-blue-100 text-xs lg:text-sm mb-3">
                   Chat with our support team for instant assistance
                 </p>
-                <button className="bg-white text-blue-600 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-100 transition-colors">
+                <button className="bg-white text-blue-600 px-3 py-2 lg:px-4 rounded-lg text-xs lg:text-sm font-medium hover:bg-gray-100 transition-colors">
                   Start Live Chat
                 </button>
               </div>
@@ -169,12 +169,12 @@ const Contact = () => {
 
           {/* Contact Form */}
           <div className="lg:col-span-2">
-            <div className="bg-white rounded-lg shadow-sm p-8">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h2>
+            <div className="bg-white rounded-lg shadow-sm p-6 lg:p-8">
+              <h2 className="text-xl lg:text-2xl font-bold text-gray-900 mb-4 lg:mb-6">Send us a Message</h2>
               
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 lg:space-y-6">
                 {/* Name and Email */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
                   <div>
                     <label htmlFor="name" className="form-label">
                       Full Name *
@@ -207,7 +207,7 @@ const Contact = () => {
                 </div>
 
                 {/* Phone and Inquiry Type */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
                   <div>
                     <label htmlFor="phone" className="form-label">
                       Phone Number
@@ -278,7 +278,7 @@ const Contact = () => {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="btn-primary w-full md:w-auto px-8 py-3 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="btn-primary w-full md:w-auto px-6 py-3 lg:px-8 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {loading ? (
                       <div className="flex items-center justify-center">
@@ -301,22 +301,22 @@ const Contact = () => {
         {/* Map Section */}
         <div className="mt-12">
           <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-            <div className="p-6 border-b border-gray-200">
-              <h2 className="text-2xl font-bold text-gray-900 mb-2">Find Us</h2>
-              <p className="text-gray-600">
+            <div className="p-4 lg:p-6 border-b border-gray-200">
+              <h2 className="text-xl lg:text-2xl font-bold text-gray-900 mb-2">Find Us</h2>
+              <p className="text-gray-600 text-sm lg:text-base">
                 Visit our campus to experience our state-of-the-art facilities and meet our team
               </p>
             </div>
             
             {/* Map Placeholder */}
-            <div className="h-96 bg-gray-200 flex items-center justify-center">
+            <div className="h-64 lg:h-96 bg-gray-200 flex items-center justify-center">
               <div className="text-center">
-                <MapPin className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-                <h3 className="text-lg font-semibold text-gray-700 mb-2">Interactive Map</h3>
-                <p className="text-gray-500">
+                <MapPin className="w-12 h-12 lg:w-16 lg:h-16 text-gray-400 mx-auto mb-3 lg:mb-4" />
+                <h3 className="text-base lg:text-lg font-semibold text-gray-700 mb-2">Interactive Map</h3>
+                <p className="text-gray-500 text-sm lg:text-base px-4">
                   123 Education Street, Learning City, LC 12345
                 </p>
-                <button className="mt-4 btn-primary">
+                <button className="mt-3 lg:mt-4 btn-primary text-sm lg:text-base">
                   Get Directions
                 </button>
               </div>
@@ -327,49 +327,49 @@ const Contact = () => {
         {/* FAQ Section */}
         <div className="mt-12">
           <div className="bg-white rounded-lg shadow-sm p-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+            <h2 className="text-xl lg:text-2xl font-bold text-gray-900 mb-4 lg:mb-6">Frequently Asked Questions</h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
               <div>
-                <h3 className="font-semibold text-gray-900 mb-2">What are your admission requirements?</h3>
-                <p className="text-gray-600 text-sm mb-4">
+                <h3 className="font-semibold text-gray-900 mb-2 text-sm lg:text-base">What are your admission requirements?</h3>
+                <p className="text-gray-600 text-xs lg:text-sm mb-4">
                   Our admission requirements vary by course. Generally, we require a high school diploma 
                   or equivalent, and some courses may have specific prerequisites.
                 </p>
               </div>
               
               <div>
-                <h3 className="font-semibold text-gray-900 mb-2">Do you offer financial aid?</h3>
-                <p className="text-gray-600 text-sm mb-4">
+                <h3 className="font-semibold text-gray-900 mb-2 text-sm lg:text-base">Do you offer financial aid?</h3>
+                <p className="text-gray-600 text-xs lg:text-sm mb-4">
                   Yes, we offer various financial aid options including scholarships, payment plans, 
                   and student loans. Contact our admissions team for more information.
                 </p>
               </div>
               
               <div>
-                <h3 className="font-semibold text-gray-900 mb-2">What is your refund policy?</h3>
-                <p className="text-gray-600 text-sm mb-4">
+                <h3 className="font-semibold text-gray-900 mb-2 text-sm lg:text-base">What is your refund policy?</h3>
+                <p className="text-gray-600 text-xs lg:text-sm mb-4">
                   We offer a full refund within the first week of classes. After that, 
                   refunds are prorated based on the remaining course duration.
                 </p>
               </div>
               
               <div>
-                <h3 className="font-semibold text-gray-900 mb-2">Are certificates recognized by employers?</h3>
-                <p className="text-gray-600 text-sm mb-4">
+                <h3 className="font-semibold text-gray-900 mb-2 text-sm lg:text-base">Are certificates recognized by employers?</h3>
+                <p className="text-gray-600 text-xs lg:text-sm mb-4">
                   Yes, our certificates are widely recognized by employers and industry partners. 
                   We maintain strong relationships with leading companies in various sectors.
                 </p>
               </div>
             </div>
             
-            <div className="mt-8 text-center">
-              <p className="text-gray-600 mb-4">
+            <div className="mt-6 lg:mt-8 text-center">
+              <p className="text-gray-600 mb-4 text-sm lg:text-base">
                 Can't find what you're looking for?
               </p>
-              <Link to="/faq" className="btn-outline">
+              <button className="btn-outline text-sm lg:text-base">
                 View All FAQs
-              </Link>
+              </button>
             </div>
           </div>
         </div>

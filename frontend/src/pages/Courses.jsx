@@ -251,20 +251,20 @@ const Courses = () => {
                 <p className="text-gray-600">Try adjusting your search or filter criteria</p>
               </div>
             ) : (
-              <div className={`grid gap-6 ${
+              <div className={`grid gap-4 sm:gap-6 ${
                 viewMode === 'grid' 
-                  ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' 
+                  ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3' 
                   : 'grid-cols-1'
               }`}>
                 {currentCourses.map((course) => (
                   <div
                     key={course.courseCode}
                     className={`bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden ${
-                      viewMode === 'list' ? 'flex' : ''
+                      viewMode === 'list' ? 'flex flex-col sm:flex-row' : ''
                     }`}
                   >
                     {/* Course Image */}
-                    <div className={`${viewMode === 'list' ? 'w-48 flex-shrink-0' : 'h-48'} bg-gradient-to-r from-primary-500 to-primary-600 relative`}>
+                    <div className={`${viewMode === 'list' ? 'h-48 sm:w-48 sm:h-auto flex-shrink-0' : 'h-48'} bg-gradient-to-r from-primary-500 to-primary-600 relative`}>
                       {course.image ? (
                         <img
                           src={course.image}
@@ -273,30 +273,30 @@ const Courses = () => {
                         />
                       ) : (
                         <div className="flex items-center justify-center h-full">
-                          <span className="text-white text-lg font-semibold text-center px-4">
+                          <span className="text-white text-sm sm:text-lg font-semibold text-center px-4">
                             {course.courseName}
                           </span>
                         </div>
                       )}
                       <div className="absolute top-4 left-4">
-                        <span className="bg-yellow-400 text-gray-900 px-3 py-1 rounded-full text-sm font-medium">
+                        <span className="bg-yellow-400 text-gray-900 px-2 py-1 sm:px-3 rounded-full text-xs sm:text-sm font-medium">
                           {course.category}
                         </span>
                       </div>
                     </div>
 
                     {/* Course Content */}
-                    <div className="p-6 flex-1">
-                      <h3 className="text-xl font-bold text-gray-900 mb-2 line-clamp-2">
+                    <div className="p-4 sm:p-6 flex-1">
+                      <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 line-clamp-2">
                         {course.courseName}
                       </h3>
-                      <p className="text-gray-600 mb-4 line-clamp-3">
+                      <p className="text-gray-600 mb-4 line-clamp-3 text-sm sm:text-base">
                         {course.description || course.subtitle || 'Learn essential skills with hands-on projects and expert guidance.'}
                       </p>
 
                       {/* Course Meta */}
-                      <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
-                        <div className="flex items-center space-x-4">
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between text-sm text-gray-500 mb-4 gap-2">
+                        <div className="flex items-center space-x-3 sm:space-x-4">
                           <div className="flex items-center">
                             <Clock className="w-4 h-4 mr-1" />
                             <span>{course.duration || '8 weeks'}</span>
@@ -313,18 +313,18 @@ const Courses = () => {
                       </div>
 
                       {/* Price and CTA */}
-                      <div className="flex items-center justify-between">
-                        <div className="text-2xl font-bold text-blue-600">
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                        <div className="text-xl sm:text-2xl font-bold text-blue-600">
                           {course.fees?.currency || 'Rs.'} {course.fees?.discounted || course.fees?.original || 'Free'}
                           {course.fees?.original && course.fees?.discounted && course.fees.original !== course.fees.discounted && (
-                            <span className="text-sm text-gray-500 line-through ml-2">
+                            <span className="text-sm text-gray-500 line-through ml-2 block sm:inline">
                               {course.fees.currency} {course.fees.original}
                             </span>
                           )}
                         </div>
                         <Link
                           to={`/courses/${course.courseCode}`}
-                          className="btn-primary"
+                          className="btn-primary w-full sm:w-auto text-center"
                         >
                           View Details
                         </Link>
@@ -337,12 +337,12 @@ const Courses = () => {
 
             {/* Pagination */}
             {totalPages > 1 && (
-              <div className="flex justify-center mt-8">
+              <div className="flex justify-center mt-6 sm:mt-8">
                 <div className="flex items-center space-x-2">
                   <button
                     onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
                     disabled={currentPage === 1}
-                    className="px-3 py-2 border border-gray-300 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50"
+                    className="px-2 py-1 sm:px-3 sm:py-2 border border-gray-300 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50 text-sm"
                   >
                     Previous
                   </button>
@@ -351,7 +351,7 @@ const Courses = () => {
                     <button
                       key={page}
                       onClick={() => setCurrentPage(page)}
-                      className={`px-3 py-2 border rounded-lg ${
+                      className={`px-2 py-1 sm:px-3 sm:py-2 border rounded-lg text-sm ${
                         currentPage === page
                           ? 'bg-blue-600 text-white border-blue-600'
                           : 'border-gray-300 hover:bg-gray-50'
@@ -364,7 +364,7 @@ const Courses = () => {
                   <button
                     onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
                     disabled={currentPage === totalPages}
-                    className="px-3 py-2 border border-gray-300 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50"
+                    className="px-2 py-1 sm:px-3 sm:py-2 border border-gray-300 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50 text-sm"
                   >
                     Next
                   </button>

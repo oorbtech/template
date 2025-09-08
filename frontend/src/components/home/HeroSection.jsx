@@ -19,44 +19,44 @@ const HeroSection = () => {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Content */}
           <div className="text-center lg:text-left">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 lg:mb-6">
               Transform Your
               <span className="block text-yellow-300">Career Today</span>
             </h1>
-            <p className="text-xl text-blue-100 mb-8 max-w-2xl">
+            <p className="text-lg sm:text-xl text-blue-100 mb-6 lg:mb-8 max-w-2xl mx-auto lg:mx-0">
               Join BMS Academy and master in-demand skills through our comprehensive 
               offline courses. Learn from industry experts and build a successful career.
             </p>
             
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start mb-8 lg:mb-12">
               <Link
                 to="/courses"
-                className="inline-flex items-center px-8 py-4 bg-yellow-400 text-gray-900 font-semibold rounded-lg hover:bg-yellow-300 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                className="inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 bg-yellow-400 text-gray-900 font-semibold rounded-lg hover:bg-yellow-300 transition-all duration-300 transform hover:scale-105 shadow-lg text-sm sm:text-base"
               >
                 Browse Courses
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
-              <button className="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-primary-700 transition-all duration-300">
+              <button className="inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-primary-700 transition-all duration-300 text-sm sm:text-base">
                 <Play className="mr-2 w-5 h-5" />
                 Watch Demo
               </button>
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-6">
+            <div className="grid grid-cols-3 gap-4 sm:gap-6">
               {stats.map((stat, index) => {
                 const Icon = stat.icon;
                 return (
                   <div key={index} className="text-center">
-                    <div className="inline-flex items-center justify-center w-12 h-12 bg-white bg-opacity-20 rounded-lg mb-2">
-                      <Icon className="w-6 h-6" />
+                    <div className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-white bg-opacity-20 rounded-lg mb-2">
+                      <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
                     </div>
-                    <div className="text-2xl font-bold">{stat.value}</div>
-                    <div className="text-sm text-blue-100">{stat.label}</div>
+                    <div className="text-lg sm:text-2xl font-bold">{stat.value}</div>
+                    <div className="text-xs sm:text-sm text-blue-100">{stat.label}</div>
                   </div>
                 );
               })}
@@ -69,25 +69,25 @@ const HeroSection = () => {
               <img
                 src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800"
                 alt="Students learning"
-                className="rounded-2xl shadow-2xl"
+                className="rounded-xl lg:rounded-2xl shadow-2xl w-full"
               />
               
               {/* Floating Cards */}
-              <div className="absolute -top-6 -left-6 bg-white text-gray-900 p-4 rounded-lg shadow-lg">
+              <div className="absolute -top-4 -left-4 lg:-top-6 lg:-left-6 bg-white text-gray-900 p-3 lg:p-4 rounded-lg shadow-lg">
                 <div className="flex items-center space-x-2">
                   <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                  <span className="text-sm font-medium">Live Classes</span>
+                  <span className="text-xs lg:text-sm font-medium">Live Classes</span>
                 </div>
               </div>
               
-              <div className="absolute -bottom-6 -right-6 bg-yellow-400 text-gray-900 p-4 rounded-lg shadow-lg">
-                <div className="text-2xl font-bold">95%</div>
-                <div className="text-sm">Success Rate</div>
+              <div className="absolute -bottom-4 -right-4 lg:-bottom-6 lg:-right-6 bg-yellow-400 text-gray-900 p-3 lg:p-4 rounded-lg shadow-lg">
+                <div className="text-xl lg:text-2xl font-bold">95%</div>
+                <div className="text-xs lg:text-sm">Success Rate</div>
               </div>
             </div>
             
             {/* Background Decoration */}
-            <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-2xl transform rotate-6 scale-105 opacity-20"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-xl lg:rounded-2xl transform rotate-6 scale-105 opacity-20"></div>
           </div>
         </div>
       </div>
